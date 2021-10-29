@@ -1,0 +1,10 @@
+<!--https://talk.jekyllrb.com/t/inclusion-image-on-left-side-and-text-on-the-right-side-using-markdown-in-jekyll-site/3413/10-->
+<div style="clear: both;">
+  <div style="float: right; margin-right 1em;">
+    <img src="{{ include.image_path }}" alt="" height="{{ include.height }}" width="{{ include.width }}">
+  </div>
+  <div>
+    <h3>{{ include.title }}</h3>
+    {{ include.description | markdownify }}
+  </div>
+</div>
