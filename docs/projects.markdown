@@ -25,7 +25,7 @@ Research robots usually have a complex software stack. The Vizzy humanoid robot 
 
 <br/><br/>
 
-{% include module.html image_path="/assets/table_tennis.jpg" height="220px" width="300px" title="Learning Robot Table Tennis" description="
+{% include module.html image_path="/assets/table_tennis.gif" height="220px" width="300px" title="Learning Robot Table Tennis" description="
 [https://github.com/carlos-cardoso/robot-skills](https://github.com/carlos-cardoso/robot-skills)
 
 My MSc project. A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations. Implemented in a simulated environment as well as in a real robotic platform. A BioRob manipulator + OptiTrack motion capture system that tracks the position of the ball. 
