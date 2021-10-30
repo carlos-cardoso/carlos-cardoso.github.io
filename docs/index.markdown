@@ -4,7 +4,7 @@
 
 # layout: home
 layout: default
-title: Homepage
+title: About
 ---
 
 ![yay](/assets/photo.jpg){:height="150px" width="150px"}
@@ -18,3 +18,4 @@ Skills:
 * Python + Julia
 * Embedded C/C++/Rust (ARM)
 * Robotics/ML/Computer Vision
+
