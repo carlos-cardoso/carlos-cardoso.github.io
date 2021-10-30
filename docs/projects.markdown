@@ -47,7 +47,7 @@ To capture RGBD data in Linux with Kinect V2 we can use [libfreenect2](https://g
 
 
 {% include module.html image_path="/assets/chanters.jpg" height="300px" width="300px" title="3D Printed Galician Bagpipe Chanter" description="
-[https://github.com/carlos-cardoso/galician_chanter_scad](https://github.com/carlos-cardoso/galician_chanter_scad)
+[https://github.com/carlos-cardoso/galician-chanter-scad](https://github.com/carlos-cardoso/galician-chanter-scad)
 
 With the help of Professor Paulo Marinho (Sétima Legião, Anaquinhos da Terra, Gaiteiros de Lisboa) I modeled and printed a functional Galician Bagpipe Chanter (2019).
 
@@ -56,16 +56,37 @@ With the help of Professor Paulo Marinho (Sétima Legião, Anaquinhos da Terra, 
 
 <br/><br/>
 <br/><br/>
+<br/><br/>
 
-{% include module.html image_path="/assets/teensy_pipe.jpg" height="300px" width="300px" title="Teensy Electronic Bagpipe Changer" description="
-[https://github.com/carlos-cardoso/teensy_pipe](https://github.com/carlos-cardoso/teensy_pipe)
+{% include module.html image_path="/assets/teensy_pipe.jpg" height="280px" width="300px" title="Teensy Electronic Bagpipe Changer" description="
+[https://github.com/carlos-cardoso/teensy-pipe](https://github.com/carlos-cardoso/teensy-pipe)
 
 An electronic Galician bagpipe chanter based on a Teensy LC (Low Cost) board. Has configurable fingering and sends MIDI commands to a synthesizer through USB (tested on an iPad running Universal Piper).
 
 (Embedded C++, python)
 " %}
 
-* Theatrical Special Effects Robot
-* Embedded Behavior Trees
-* Physics Properties RIPPE
+<br/><br/>
+<br/><br/>
 
+{% include module.html image_path="/assets/kinova.gif" height="250px" width="300px" title="Physics Parameters Estimator" description="
+[https://github.com/carlos-cardoso/RIPPE](https://github.com/carlos-cardoso/RIPPE)
+
+In this work, we used a simulation environment (pybullet) to estimate the physical properties of objects (mass, friction) from observations of a robot interacting in the real world.
+
+(python)
+" %}
+
+<br/><br/>
+<br/><br/>
+
+{% include module.html image_path="/assets/tree.jpg" height="300px" width="300px" title="Embedded Behavior Trees" description="
+[https://github.com/carlos-cardoso/arduino-behavior-tree](https://github.com/carlos-cardoso/arduino-behavior-tree)
+
+An example platformio project for the Arduino due. Uses the beehive header-only behavior trees library, and Groot for visual editing of trees.
+
+(python, c++)
+" %}
+
+<br/><br/>
+<br/><br/>
