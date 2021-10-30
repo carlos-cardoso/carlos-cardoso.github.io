@@ -57,7 +57,14 @@ With the help of Professor Paulo Marinho (Sétima Legião, Anaquinhos da Terra, 
 <br/><br/>
 <br/><br/>
 
-* Teensy Electric Bagpipe Changer
+{% include module.html image_path="/assets/teensy_pipe.jpg" height="300px" width="300px" title="Teensy Electronic Bagpipe Changer" description="
+[https://github.com/carlos-cardoso/teensy_pipe](https://github.com/carlos-cardoso/teensy_pipe)
+
+An electronic Galician bagpipe chanter based on a Teensy LC (Low Cost) board. Has configurable fingering and sends MIDI commands to a synthesizer through USB (tested on an iPad running Universal Piper).
+
+(Embedded C++, python)
+" %}
+
 * Theatrical Special Effects Robot
 * Embedded Behavior Trees
 * Physics Properties RIPPE
