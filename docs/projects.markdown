@@ -90,3 +90,15 @@ An example platformio project for the Arduino due. Uses the beehive header-only 
 
 <br/><br/>
 <br/><br/>
+<br/><br/>
+
+{% include module.html  image_path="/assets/1_rg6_nov_capturingyou-cana-liborio.png" height="250px" width="300px" title="Special FX robot" description="
+[ruadasgaivotas6.pt/events/capturing-you-fictional-politics-of-movement](https://ruadasgaivotas6.pt/events/capturing-you-fictional-politics-of-movement/?lang=en)
+
+Live-coded a videogame and created a wifi-operated self-destructing robot for the performance \"Capturing you \| Fictional Politics of Movement\" by Ana Libório at Rua das Gaivotas 6.
+
+(bash, c++, Godot)
+" %}
+
+<br/><br/>
+<br/><br/>
