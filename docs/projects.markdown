@@ -28,7 +28,7 @@ Research robots usually have a complex software stack. The Vizzy humanoid robot 
 {% include module.html image_path="/assets/table_tennis.gif" height="220px" width="300px" title="Learning Robot Table Tennis" description="
 [https://github.com/carlos-cardoso/robot-skills](https://github.com/carlos-cardoso/robot-skills)
 
-My MSc project. A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations. Implemented in a simulated environment as well as in a real robotic platform. A BioRob manipulator + OptiTrack motion capture system that tracks the position of the ball. 
+My MSc project. A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations. I implemented the system in a simulated environment and on a real robotic platform, consisting of a BioRob manipulator + OptiTrack motion capture system that tracks the ball's position.
 
 (Julia, C++, Python, ROS)
 " %}
@@ -58,7 +58,7 @@ With the help of Professor Paulo Marinho (Sétima Legião, Anaquinhos da Terra, 
 <br/><br/>
 <br/><br/>
 
-{% include module.html image_path="/assets/teensy_pipe.jpg" height="280px" width="300px" title="Teensy Electronic Bagpipe Changer" description="
+{% include module.html image_path="/assets/teensy_pipe.jpg" height="280px" width="300px" title="Teensy Electronic Bagpipe Chanter" description="
 [https://github.com/carlos-cardoso/teensy-pipe](https://github.com/carlos-cardoso/teensy-pipe)
 
 An electronic Galician bagpipe chanter based on a Teensy LC (Low Cost) board. Has configurable fingering and sends MIDI commands to a synthesizer through USB (tested on an iPad running Universal Piper).
