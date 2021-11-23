@@ -7,7 +7,7 @@ permalink: /projects/
 {% include module.html image_path="/assets/smpl_space.gif" height="200px" width="300px" title="SMPL domain Interactive Visualizer" description="
 [https://github.com/carlos-cardoso/SmplDofApp](https://github.com/carlos-cardoso/SmplDofApp)
 
-A simple web app to interactively explore the degrees of freedom of the [SMPL](https://smpl.is.tue.mpg.de/) model. Based on the visualization code from [EasyMocap](https://github.com/zju3dv/EasyMocap)
+A simple web app to interactively explore the degrees of freedom of the [SMPL](https://smpl.is.tue.mpg.de/) model. Based on the visualization code from [EasyMocap](https://github.com/zju3dv/EasyMocap).
     
 (Python, HTML)
 " %}
