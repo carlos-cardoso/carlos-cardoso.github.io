@@ -4,6 +4,18 @@ title: Projects
 permalink: /projects/
 ---
 
+{% include module.html  image_path="/assets/vizzy_hintt.jpg" height="200px" width="300px" title="Vizzy Robot Handshake" description="
+[https://github.com/vislab-tecnico-lisboa/vizzy](https://github.com/vislab-tecnico-lisboa/vizzy)
+
+Created RVIZ plugins and operated the Vizzy Robot for handshaking and handover of the envelope with the GLINTT HINTT health award recipients. Operated Vizzy while handshaking dignitaries such as the President of the European Parliament Antonio Tajani.
+
+(c++, ROS, RVIZ)
+" %}
+
+<br/><br/>
+<br/><br/>
+
+
 {% include module.html image_path="/assets/smpl_space.gif" height="200px" width="300px" title="SMPL domain Interactive Visualizer" description="
 [https://github.com/carlos-cardoso/SmplDofApp](https://github.com/carlos-cardoso/SmplDofApp)
 
@@ -102,3 +114,5 @@ Live-coded a videogame and created a wifi-operated self-destructing robot for th
 
 <br/><br/>
 <br/><br/>
+<br/><br/>
+
