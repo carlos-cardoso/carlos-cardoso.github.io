@@ -16,7 +16,7 @@ My research concerns physical human-robot interactions such as handshaking and h
 Skills:
 * Linux/Unix
 * Python + Julia
-* Embedded C/C++, learning Rust 
-* Robotics/ML/Computer Vision
+* C/C++, Rust 
+* Robotics/Machine Learning/Embedded
 
 Please see my [projects](projects) and [publications](publications).
