@@ -116,3 +116,19 @@ Live-coded a videogame and created a wifi-operated self-destructing robot for th
 <br/><br/>
 <br/><br/>
 
+{% include module.html  image_path="/assets/passepartout.jpg" height="375px" width="300px" title="I've seen this face before (details)" description="
+[https://brunojosesilva.com/LIMIT-OF-DISAPPEARANCE](https://brunojosesilva.com/LIMIT-OF-DISAPPEARANCE)
+
+
+We find a clean white frame with a small abstract illustration. When we approach the structure to see clearly, the image becomes blurry. However, if we can be patient and remain still, the picture slowly returns to focus.
+
+This project is one of two art pieces created in cooperation with the artist Bruno José Silva. In display at the Project Room in Banco das Artes Galeria, Leiria (from April, 09 to May 29, 2022).
+
+(Raspberry Pi, HD LCD, Camera, OpenCV, PyGame, Python)
+" %}
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
+    
