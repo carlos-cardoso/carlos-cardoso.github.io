@@ -31,3 +31,6 @@ permalink: /publications/
 
 * EgoVIP workshop at IROS 2021 Prague, Czech Republic 
 •C. Cardoso*, A. Bernardino,”Bayesian Interaction Primitives for Robot to Human Handover with Giver‑Egocentric Observations” (first author)
+
+* IEEE ICDL 2022 London, United Kingdom 
+•C. Cardoso*, A. Bernardino, "Exploiting a Statistical Body Model for Handover Interaction Primitives" (first author)
