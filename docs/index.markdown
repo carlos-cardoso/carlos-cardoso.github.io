@@ -7,16 +7,14 @@ layout: default
 title: About
 ---
 
-![yay](/assets/photo.jpg){:height="150px" width="150px"}
+![yay](/assets/photo2.jpg){:height="150px" width="150px"}
 
-I'm currently a PhD Candidate at Técnico Lisboa  working in [VisLab](https://vislab.isr.tecnico.ulisboa.pt/) under the supervision of Professor [Alexandre Bernardino](http://www.isr.tecnico.ulisboa.pt/~alex).
-
-My research concerns physical human-robot interactions such as handshaking and human-robot handovers.
+I'm currently a Rust Software Engineer accelerating healthcare with AI @ [deepc](https://deepc.ai).
 
 Skills:
-* Linux/Unix
-* Python + Julia
-* C/C++, Rust 
+* Rust, C/C++, Python
+* Kubernetes, Linux/Unix, Git
+* PostgreSQL
 * Robotics/Machine Learning/Embedded
 
 Please see my [projects](projects) and [publications](publications).
