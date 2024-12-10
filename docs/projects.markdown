@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-{% include module.html  image_path="/assets/flim.png" height="350px" width="300px" title="Overlap Of FLIM Microscopy Images" description="
+{% include module.html  image_path="/assets/flim.png" height="300px" width="300px" title="Overlap Of FLIM Microscopy Images" description="
 [https://flim-measure-overlap.fly.dev/](https://flim-measure-overlap.fly.dev/)
 
 A web app (also native for linux, windows) that computes the pixel overlap of multiple FLIM (Fluorescence Lifetime Imaging Microscopy) images. Allows selecting an area to compute the overlap, replacing colors, and setting the weight of individual images. Can save the blended images and a mask of the overlaping pixels.
