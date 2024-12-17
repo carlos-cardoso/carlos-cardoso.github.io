@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use std::collections::HashSet;
+use std::{collections::HashSet, sync::LazyLock};
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
@@ -241,7 +241,7 @@ struct Project {
 #[derive(Clone, Debug)]
 struct SelectedTags(HashSet<String>);
 
-const MY_PROJECTS: [Project; 12] =  [
+const MY_PROJECTS: [Project; 15] =  [
     Project {
         image_path: asset!("/assets/flim.png"),
         title: "Overlap Of FLIM Microscopy Images",
@@ -254,79 +254,114 @@ const MY_PROJECTS: [Project; 12] =  [
         title: "Vizzy Robot Handshake",
         description: "Created RVIZ plugins and operated the Vizzy Robot for handshaking and handover of the envelope with the GLINTT HINTT health award recipients. Operated Vizzy while handshaking dignitaries such as the President of the European Parliament Antonio Tajani.",
         link: "https://github.com/vislab-tecnico-lisboa/vizzy",
-        tags: &["C++", "ROS", "RVIZ"],
+        tags: &["C++", "ROS", "RVIZ", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/smpl_space.gif"),
         title: "SMPL domain Interactive Visualizer",
         description: "A simple web app to interactively explore the degrees of freedom of the SMPL model. Based on the visualization code from EasyMocap.",
         link: "https://github.com/carlos-cardoso/SmplDofApp",
-        tags: &["Python", "HTML"],
+        tags: &["Python", "HTML", "Machine Learning"],
     },
     Project {
         image_path: asset!("/assets/vizzy_docker.jpg"),
         title: "Vizzy Robot Simulator Docker Image",
         description: "This docker image allows researchers to skip setting up Vizzy and start experimenting on the simulated Vizzy in a fraction of the time.",
         link: "https://github.com/carlos-cardoso/vizzy-docker",
-        tags: &["Dockerfiles"],
+        tags: &["Docker", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/table_tennis.gif"),
         title: "Learning Robot Table Tennis",
         description: "A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations.",
         link: "https://github.com/carlos-cardoso/robot-skills",
-        tags: &["Julia", "C++", "Python", "ROS"],
+        tags: &["Julia", "C++", "Python", "ROS", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/kinect.jpg"),
         title: "Nix ROS Kinect V2",
         description: "To capture RGBD data in Linux with Kinect V2, this repo contains scripts and the missing nix packages to run libfreenect2 in any Linux system.",
         link: "https://github.com/carlos-cardoso/kinect2-nix-ros-overlay",
-        tags: &["Nix", "Bash"],
+        tags: &["Nix", "Bash", "ROS", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/chanters.jpg"),
         title: "3D Printed Galician Bagpipe Chanter",
         description: "Modeled and printed a functional Galician Bagpipe Chanter with the help of Professor Paulo Marinho.",
         link: "https://github.com/carlos-cardoso/galician-chanter-scad",
-        tags: &["OpenScad"],
+        tags: &["OpenScad", "3D Printing"],
     },
     Project {
         image_path: asset!("/assets/teensy_pipe.jpg"),
         title: "Teensy Electronic Bagpipe Chanter",
         description: "An electronic Galician bagpipe chanter based on a Teensy LC board. Has configurable fingering and sends MIDI commands to a synthesizer through USB.",
         link: "https://github.com/carlos-cardoso/teensy-pipe",
-        tags: &["Embedded", "Python"],
+        tags: &["Embedded", "C++", "Python", "OpenScad", "3D Printing", "MIDI"],
     },
     Project {
         image_path: asset!("/assets/kinova.gif"),
         title: "Physics Parameters Estimator",
         description: "Used a simulation environment (pybullet) to estimate the physical properties of objects (mass, friction) from observations of a robot interacting in the real world.",
         link: "https://github.com/carlos-cardoso/RIPPE",
-        tags: &["Python"],
+        tags: &["Python", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/tree.jpg"),
         title: "Embedded Behavior Trees",
         description: "An example platformio project for the Arduino due. Uses the beehive header-only behavior trees library and Groot for visual editing of trees.",
         link: "https://github.com/carlos-cardoso/arduino-behavior-tree",
-        tags: &["Embedded", "Python", "C++"],
+        tags: &["Embedded", "Python", "C++", "Robotics"],
     },
     Project {
         image_path: asset!("/assets/1_rg6_nov_capturingyou-cana-liborio.png"),
         title: "Special FX Robot",
         description: "Live-coded a videogame and created a wifi-operated self-destructing robot for the performance 'Capturing you | Fictional Politics of Movement' by Ana Libório.",
         link: "https://ruadasgaivotas6.pt/events/capturing-you-fictional-politics-of-movement/?lang=en",
-        tags: &["Embedded","Bash", "C++", "Godot"],
+        tags: &["Embedded", "Bash", "C++", "Godot", "Robotics", "Image Processing"],
     },
     Project {
         image_path: asset!("/assets/passepartout.jpg"),
         title: "I've seen this face before (details)",
-        description: "One of two art pieces created in cooperation with artist Bruno José Silva. In display at the Project Room in Banco das Artes Galeria, Leiria.",
+        description: "One of two art pieces created in cooperation with artist Bruno José Silva. Exhibited in  Midnight Sun, Mono. Lisbon 2023, Casa Varela - Centro de Experimentação Artística. 2023, Paços - Galeria Municipal Torres Vedras 2023, Banco das Artes Galeria. Leiria 2023.
+        A raspberry pi camera captures a real-time image of the exhibition and a small high definition screen shows an image of a micro-organism. The movement of the visitor is processed in real time, unfocusing the image projected on the screen. To be able to see the image, visitors must learn to forego their impulses, slow down, and readjust to focus with contemplative vision to fully experience the installation. 
+        ",
         link: "https://brunojosesilva.com/LIMIT-OF-DISAPPEARANCE",
-        tags: &["Embedded", "HD LCD", "Camera", "OpenCV", "PyGame", "Python"],
+        tags: &["Embedded", "Image Processing", "OpenCV", "PyGame", "Python"],
+    },
+    Project {
+        image_path: asset!("/assets/favicon.ico"),
+        title: "Personal page with projects and publications",
+        description: "This website, built in rust with dioxus",
+        link: "https://github.com/carlos-cardoso/carlos-cardoso.github.io/tree/gh-pages",
+        tags: &["HTML", "Rust", "Dioxus", "Frontend", "WASM"],
+    },
+    Project {
+        image_path: asset!("/assets/limit_of_disappearance.png"),
+        title: "Installation that makes each visitor irreversibly transform an image.",
+        description: "One of two art pieces created in cooperation with artist Bruno José Silva. Exhibited at the Biennale de l’Image Tangible. 2023 in Paris, and at Espai Souvenir, cur. Fabrizio Contarino. 2023 in Barcelona.        An image printed on fabric and placed on a pulley mechanism that is activated by the presence of the visitor. This causes an irreversible transformation of the image by submerging it in dark ink. Therefore, subsequent visitors will observe the image from the perspective of those who transformed it before them. Each visitor is responsible not only for their own experience but also for what others will see.",
+        link: "https://brunojosesilva.com/LIMIT-OF-DISAPPEARANCE",
+        tags: &["Embedded", "Sensors", "Robotics"],
+    },
+    Project {
+        image_path: asset!("/assets/midi_synth.png"),
+        title: "Frontend midi synthetizer in rust with web-midi and 3d keyboard visualization",
+        description: "An experiment integrating web-midi with a rust software synthesizer library and 3d rendering of a keyboard (showing the notes being played in real-time). The web-midi api allows connecting a real digital instrument and using the browser as a synthesizer.",
+        link: "https://foliada.fly.dev/index.html",
+        tags: &["Rust", "egui", "Frontend", "WASM", "three-d", "MIDI", "audio"],
     },
     ];
+
+static ALL_TAGS: LazyLock<Vec<String>> = LazyLock::new(|| {
+    let mut all_tags: HashSet<String> = HashSet::new();
+    for p in MY_PROJECTS {
+        for t in p.tags {
+            all_tags.insert(t.to_string());
+        }
+    }
+    let mut all_tags: Vec<String> = all_tags.into_iter().collect();
+    all_tags.sort();
+    all_tags
+});
 
 #[component]
 pub fn Projects() -> Element {
@@ -348,14 +383,7 @@ pub fn Projects() -> Element {
         .cloned()
         .collect::<Vec<_>>();
 
-    let mut all_tags: HashSet<String> = HashSet::new();
-    for p in MY_PROJECTS {
-        for t in p.tags {
-            all_tags.insert(t.to_string());
-        }
-    }
-    let mut all_tags: Vec<String> = all_tags.into_iter().collect();
-    all_tags.sort();
+    let all_tags = ALL_TAGS.clone();
 
     rsx! {
         div { class: "flex flex-col min-h-screen",
