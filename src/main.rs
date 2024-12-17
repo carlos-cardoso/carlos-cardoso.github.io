@@ -254,7 +254,7 @@ const MY_PROJECTS: [Project; 15] =  [
         title: "Vizzy Robot Handshake",
         description: "Created RVIZ plugins and operated the Vizzy Robot for handshaking and handover of the envelope with the GLINTT HINTT health award recipients. Operated Vizzy while handshaking dignitaries such as the President of the European Parliament Antonio Tajani.",
         link: "https://github.com/vislab-tecnico-lisboa/vizzy",
-        tags: &["C++", "ROS", "RVIZ", "Robotics"],
+        tags: &["C++", "ROS", "RVIZ", "Robotics", "Sensors"],
     },
     Project {
         image_path: asset!("/assets/smpl_space.gif"),
@@ -275,14 +275,14 @@ const MY_PROJECTS: [Project; 15] =  [
         title: "Learning Robot Table Tennis",
         description: "A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations.",
         link: "https://github.com/carlos-cardoso/robot-skills",
-        tags: &["Julia", "C++", "Python", "ROS", "Robotics"],
+        tags: &["Julia", "C++", "Python", "ROS", "Robotics", "Machine Learning", "Sensors"],
     },
     Project {
         image_path: asset!("/assets/kinect.jpg"),
         title: "Nix ROS Kinect V2",
         description: "To capture RGBD data in Linux with Kinect V2, this repo contains scripts and the missing nix packages to run libfreenect2 in any Linux system.",
         link: "https://github.com/carlos-cardoso/kinect2-nix-ros-overlay",
-        tags: &["Nix", "Bash", "ROS", "Robotics"],
+        tags: &["Nix", "Bash", "ROS", "Robotics", "Sensors"],
     },
     Project {
         image_path: asset!("/assets/chanters.jpg"),
@@ -303,7 +303,7 @@ const MY_PROJECTS: [Project; 15] =  [
         title: "Physics Parameters Estimator",
         description: "Used a simulation environment (pybullet) to estimate the physical properties of objects (mass, friction) from observations of a robot interacting in the real world.",
         link: "https://github.com/carlos-cardoso/RIPPE",
-        tags: &["Python", "Robotics"],
+        tags: &["Python", "Sensors", "Robotics", "Machine Learning"],
     },
     Project {
         image_path: asset!("/assets/tree.jpg"),
@@ -317,7 +317,7 @@ const MY_PROJECTS: [Project; 15] =  [
         title: "Special FX Robot",
         description: "Live-coded a videogame and created a wifi-operated self-destructing robot for the performance 'Capturing you | Fictional Politics of Movement' by Ana Libório.",
         link: "https://ruadasgaivotas6.pt/events/capturing-you-fictional-politics-of-movement/?lang=en",
-        tags: &["Embedded", "Bash", "C++", "Godot", "Robotics", "Image Processing"],
+        tags: &["Embedded", "Bash", "C++", "Godot", "Robotics", "Sensors", "Image Processing"],
     },
     Project {
         image_path: asset!("/assets/passepartout.jpg"),
