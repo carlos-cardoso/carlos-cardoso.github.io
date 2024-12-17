@@ -1,9 +1,13 @@
 build-frontend: 
     dx clean
+    rm -r docs
     npx tailwindcss -i ./input.css -o ./assets/tailwind.css 
     dx build --release --platform web
-    rm -r docs
     cp -r target/dx/homepage/release/web/public docs
+    cp docs/index.html docs/404.html
+    dx clean
+    
+    
 
 
 test-frontend: build-frontend
