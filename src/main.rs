@@ -16,25 +16,14 @@ enum Route {
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
-// const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 const PHOTO: Asset = asset!("/assets/photo2.jpg");
 const FERRIS: Asset = asset!("/assets/Original_Ferris.svg");
-// const LINKEDIN: Asset = asset!("/assets/linkedin-svgrepo-com.svg");
-// const GITHUB: Asset = asset!("/assets/github-svgrepo-com.svg");
 const CV: Asset = asset!("/assets/cv.pdf");
 
 fn main() {
     dioxus::launch(App);
 }
-
-// #[server(endpoint = "static_routes")]
-// async fn static_routes() -> Result<Vec<String>, ServerFnError> {
-//     Ok(Route::static_routes()
-//         .into_iter()
-//         .map(|route| route.to_string())
-//         .collect::<Vec<_>>())
-// }
 
 #[component]
 fn App() -> Element {
@@ -412,14 +401,21 @@ pub fn Projects() -> Element {
 
                                 // Tags Section
                                 div { class: "flex flex-wrap gap-2",
-                                    for tag in project.tags.iter() {
+                                    for tag in project.tags.iter().cloned() {
                                         span {
-                                            class: "px-3 py-1 rounded-full text-sm font-medium border ".to_owned()
-                                                + if selected_tags.read().0.contains(*tag) {
+                                            class: "px-3 py-1 rounded-full text-sm font-medium border hover:bg-blue-100 transition".to_owned()
+                                                + if selected_tags.read().0.contains(tag) {
                                                     "bg-blue-100 text-blue-800 border-blue-300"
                                                 } else {
                                                     "bg-gray-100 text-gray-700 border-gray-300"
                                                 },
+                                            onclick: move |_| {
+                                                let mut tags = selected_tags.read().0.clone();
+                                                if !tags.insert(tag.to_string()) {
+                                                    tags.remove(&tag.to_string());
+                                                }
+                                                selected_tags.write().0 = tags;
+                                            },
                                             "{tag}"
                                         }
                                     }
@@ -494,38 +490,6 @@ pub fn Footer() -> Element {
         } //footer
     } //rsx
 }
-
-// /// Echo component that demonstrates fullstack server functions.
-// #[component]
-// fn Echo() -> Element {
-//     let mut response = use_signal(|| String::new());
-
-//     rsx! {
-//         div { id: "echo",
-//             h4 { "ServerFn Echo" }
-//             input {
-//                 placeholder: "Type here to echo...",
-//                 oninput: move |event| async move {
-//                     let data = echo_server(event.value()).await.unwrap();
-//                     response.set(data);
-//                 },
-//             }
-
-//             if !response().is_empty() {
-//                 p {
-//                     "Server echoed: "
-//                     i { "{response}" }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// /// Echo the user input on the server.
-// #[server(EchoServer)]
-// async fn echo_server(input: String) -> Result<String, ServerFnError> {
-//     Ok(input)
-// }
 
 #[component]
 fn PageNotFound(route: Vec<String>) -> Element {
