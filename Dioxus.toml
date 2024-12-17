@@ -2,13 +2,11 @@
 
 # App (Project) Name
 name = "homepage"
-out_dir = "docs"
 
 [web.app]
 
 # HTML title tag content
 title = "Carlos Cardoso - Software Engineer"
-base_path = "carlos-cardoso.github.io"
 
 # include `assets` in web platform
 [web.resource]
