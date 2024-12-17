@@ -235,107 +235,108 @@ struct Project {
     title: &'static str,
     description: &'static str,
     link: &'static str,
-    tags: Vec<&'static str>,
+    tags: &'static [&'static str],
 }
 
 #[derive(Clone, Debug)]
 struct SelectedTags(HashSet<String>);
 
-#[component]
-pub fn Projects() -> Element {
-    // Define the projects
-    let projects = [
+const MY_PROJECTS: [Project; 12] =  [
     Project {
         image_path: asset!("/assets/flim.png"),
         title: "Overlap Of FLIM Microscopy Images",
         description: "A web app (also native for linux, windows) that computes the pixel overlap of multiple FLIM (Fluorescence Lifetime Imaging Microscopy) images. Allows selecting an area to compute the overlap, replacing colors, and setting the weight of individual images. Can save the blended images and a mask of the overlapping pixels.",
         link: "https://flim-measure-overlap.fly.dev/",
-        tags: vec!["Rust", "WASM", "Image Processing", "egui"],
+        tags: &["Rust", "WASM", "Image Processing", "egui"],
     },
     Project {
         image_path: asset!("/assets/vizzy_hintt.jpg"),
         title: "Vizzy Robot Handshake",
         description: "Created RVIZ plugins and operated the Vizzy Robot for handshaking and handover of the envelope with the GLINTT HINTT health award recipients. Operated Vizzy while handshaking dignitaries such as the President of the European Parliament Antonio Tajani.",
         link: "https://github.com/vislab-tecnico-lisboa/vizzy",
-        tags: vec!["C++", "ROS", "RVIZ"],
+        tags: &["C++", "ROS", "RVIZ"],
     },
     Project {
         image_path: asset!("/assets/smpl_space.gif"),
         title: "SMPL domain Interactive Visualizer",
         description: "A simple web app to interactively explore the degrees of freedom of the SMPL model. Based on the visualization code from EasyMocap.",
         link: "https://github.com/carlos-cardoso/SmplDofApp",
-        tags: vec!["Python", "HTML"],
+        tags: &["Python", "HTML"],
     },
     Project {
         image_path: asset!("/assets/vizzy_docker.jpg"),
         title: "Vizzy Robot Simulator Docker Image",
         description: "This docker image allows researchers to skip setting up Vizzy and start experimenting on the simulated Vizzy in a fraction of the time.",
         link: "https://github.com/carlos-cardoso/vizzy-docker",
-        tags: vec!["Dockerfiles"],
+        tags: &["Dockerfiles"],
     },
     Project {
         image_path: asset!("/assets/table_tennis.gif"),
         title: "Learning Robot Table Tennis",
         description: "A robot that learns how to hit a table tennis ball autonomously through exploration from a small set of initial demonstrations.",
         link: "https://github.com/carlos-cardoso/robot-skills",
-        tags: vec!["Julia", "C++", "Python", "ROS"],
+        tags: &["Julia", "C++", "Python", "ROS"],
     },
     Project {
         image_path: asset!("/assets/kinect.jpg"),
         title: "Nix ROS Kinect V2",
         description: "To capture RGBD data in Linux with Kinect V2, this repo contains scripts and the missing nix packages to run libfreenect2 in any Linux system.",
         link: "https://github.com/carlos-cardoso/kinect2-nix-ros-overlay",
-        tags: vec!["Nix", "Bash"],
+        tags: &["Nix", "Bash"],
     },
     Project {
         image_path: asset!("/assets/chanters.jpg"),
         title: "3D Printed Galician Bagpipe Chanter",
         description: "Modeled and printed a functional Galician Bagpipe Chanter with the help of Professor Paulo Marinho.",
         link: "https://github.com/carlos-cardoso/galician-chanter-scad",
-        tags: vec!["OpenScad"],
+        tags: &["OpenScad"],
     },
     Project {
         image_path: asset!("/assets/teensy_pipe.jpg"),
         title: "Teensy Electronic Bagpipe Chanter",
         description: "An electronic Galician bagpipe chanter based on a Teensy LC board. Has configurable fingering and sends MIDI commands to a synthesizer through USB.",
         link: "https://github.com/carlos-cardoso/teensy-pipe",
-        tags: vec!["Embedded", "Python"],
+        tags: &["Embedded", "Python"],
     },
     Project {
         image_path: asset!("/assets/kinova.gif"),
         title: "Physics Parameters Estimator",
         description: "Used a simulation environment (pybullet) to estimate the physical properties of objects (mass, friction) from observations of a robot interacting in the real world.",
         link: "https://github.com/carlos-cardoso/RIPPE",
-        tags: vec!["Python"],
+        tags: &["Python"],
     },
     Project {
         image_path: asset!("/assets/tree.jpg"),
         title: "Embedded Behavior Trees",
         description: "An example platformio project for the Arduino due. Uses the beehive header-only behavior trees library and Groot for visual editing of trees.",
         link: "https://github.com/carlos-cardoso/arduino-behavior-tree",
-        tags: vec!["Embedded", "Python", "C++"],
+        tags: &["Embedded", "Python", "C++"],
     },
     Project {
         image_path: asset!("/assets/1_rg6_nov_capturingyou-cana-liborio.png"),
         title: "Special FX Robot",
         description: "Live-coded a videogame and created a wifi-operated self-destructing robot for the performance 'Capturing you | Fictional Politics of Movement' by Ana Libório.",
         link: "https://ruadasgaivotas6.pt/events/capturing-you-fictional-politics-of-movement/?lang=en",
-        tags: vec!["Embedded","Bash", "C++", "Godot"],
+        tags: &["Embedded","Bash", "C++", "Godot"],
     },
     Project {
         image_path: asset!("/assets/passepartout.jpg"),
         title: "I've seen this face before (details)",
         description: "One of two art pieces created in cooperation with artist Bruno José Silva. In display at the Project Room in Banco das Artes Galeria, Leiria.",
         link: "https://brunojosesilva.com/LIMIT-OF-DISAPPEARANCE",
-        tags: vec!["Embedded", "HD LCD", "Camera", "OpenCV", "PyGame", "Python"],
+        tags: &["Embedded", "HD LCD", "Camera", "OpenCV", "PyGame", "Python"],
     },
     ];
+
+#[component]
+pub fn Projects() -> Element {
+    // Define the projects
 
     // State for the selected tags
     let mut selected_tags = consume_context::<Signal<SelectedTags>>();
 
     // Filtered projects based on selected tags
-    let filtered_projects = projects
+    let filtered_projects = MY_PROJECTS
         .iter()
         .filter(|project| {
             selected_tags.read().0.is_empty()
@@ -348,7 +349,7 @@ pub fn Projects() -> Element {
         .collect::<Vec<_>>();
 
     let mut all_tags: HashSet<String> = HashSet::new();
-    for p in projects {
+    for p in MY_PROJECTS {
         for t in p.tags {
             all_tags.insert(t.to_string());
         }
@@ -357,7 +358,6 @@ pub fn Projects() -> Element {
     all_tags.sort();
 
     rsx! {
-
         div { class: "flex flex-col min-h-screen",
             Header {}
             main { class: "flex-grow container mx-auto px-4 py-8",
@@ -409,6 +409,7 @@ pub fn Projects() -> Element {
                                                 } else {
                                                     "bg-gray-100 text-gray-700 border-gray-300"
                                                 },
+                                            style: if selected_tags.read().0.contains(&tag.to_string()) { "background-color: #cce5ff;" } else { "" },
                                             onclick: move |_| {
                                                 let mut tags = selected_tags.read().0.clone();
                                                 if !tags.insert(tag.to_string()) {
